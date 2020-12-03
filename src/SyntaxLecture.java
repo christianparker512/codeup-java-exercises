@@ -65,17 +65,19 @@ public class SyntaxLecture {
 
         // primitive types...
 
-//            byte age = -32;
-//        System.out.println(age);
-//            short minimumAnnualSalary = 15080;
-//            int distanceToSaturn = 1200000000;
-//            long numberOfHumanCells = 3000000000L; // L needed for compiler
-//            System.out.println(numberOfHumanCells);
-//            float lengthOfBacteriaInInches = 0.00004F; // F needed for compiler
-//            System.out.println(lengthOfBacteriaInInches);
-//            double widthOfAtomInMeters = .00000000001;
-//            char seatingSection = 'M'; // must wrap in single quotes
-//            boolean everythingIsAwesome = false;
+            byte age = -32;
+        System.out.println(age);
+            short minimumAnnualSalary = 15080;
+            int distanceToSaturn = 1200000000;
+            long numberOfHumanCells = 3000000000L; // L needed for compiler
+            System.out.println(numberOfHumanCells);
+            float lengthOfBacteriaInInches = 0.00004F; // F needed for compiler
+            System.out.println(lengthOfBacteriaInInches);
+            double widthOfAtomInMeters = .00000000001;
+            char seatingSection = 'M'; // must wrap in single quotes
+            boolean everythingIsAwesome = false;
+
+
 
         // strings (not a primitive type)
 
