@@ -71,7 +71,7 @@ public class StringLecture {
 
 
 // ------ .length()
-
+//
 //        String longestWord = "pneumonoultramicroscopicsilicovolcanoconiosis";
 //        System.out.println(longestWord.length());
 
@@ -85,9 +85,14 @@ public class StringLecture {
 
 // ------ .substring(int beginIndex[, int endIndex])
 
-//        String name = "Justin Bob Reich";
-//        String firstName = name.substring(0, name.indexOf(" "));
-//
+        String name = "Justin Bob Reich";
+//            name.substring(0,3);
+        String firstName = name.substring(0, name.indexOf(" "));
+          System.out.println(firstName);
+//            System.out.println(name.indexOf(" "));
+//            String firstName = name.substring(0,6);
+//            returns Justin;
+
 //        String lastName = name.substring(name.lastIndexOf(" ") + 1);
 //        System.out.println(firstName);
 //        System.out.println(lastName);
@@ -101,33 +106,34 @@ public class StringLecture {
 
 // ------ .toLowerCase() and .toUpperCase()
 
-//        String hello = "hELlo";
-//        System.out.println(hello.toUpperCase());
-//        System.out.println(hello.toLowerCase());
-//        System.out.println(hello);
+        String hello = "hELlo";
+        System.out.println(hello.toUpperCase());
+        System.out.println(hello.toLowerCase());
+        System.out.println(hello);
+
 
 
 // ------ .trim()
 
-//        String input = "   bob      smith \n\n  ";
-//        String trimmedInput = input.trim();
-//        System.out.println(trimmedInput);
-//
-//        System.out.print("|" + input + "|");
+        String input = "   bob      smith \n\n  ";
+        String trimmedInput = input.trim();
+        System.out.println(trimmedInput);
+
+        System.out.print("|" + input + "|");
 
 
 // ------ chaining string methods
 
 // convert word to pig latin word (assume word doesn't begin with a vowel or end in ay)
 
-        //String word1 = "cat";
-        //String pigLatinWord = word1
-        //    .trim()
-        //    .toLowerCase()
-        //    .substring(1)
-        //    .concat(word1.substring(0, 1).toLowerCase())
-        //    .concat("ay");
-        //System.out.println(pigLatinWord);
+        String word1 = "cat";
+        String pigLatinWord = word1
+            .trim()
+            .toLowerCase()
+            .substring(1)
+            .concat(word1.substring(0, 1).toLowerCase())
+            .concat("ay");
+        System.out.println(pigLatinWord);
 
 
 
