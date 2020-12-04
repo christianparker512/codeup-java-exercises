@@ -35,7 +35,7 @@ public class MethodLecture {
 //
 //        // ------ OVERLOADING
 //        sayHello();
-//        sayHello(2);
+        sayHello(5);
 //        sayHello("John");
 //        sayHello("Salutations", "Kevin");
 //
@@ -45,7 +45,7 @@ public class MethodLecture {
 
 //        countTo100Loop(1);
 //        countTo100(1);
-
+//         southHello();
 
     }
 
@@ -72,24 +72,28 @@ public class MethodLecture {
     //    }
 
     // return type based on multiple inputs
-    public static double returnProductOfThreeNums(double num1, double num2, double num3) {
-        int x = 5;
-        int y = 6;
-        String z = "bob";
-        return num1 * num2 * num3;
-    }
-        System.out.println(returnProductOfThreeNums);
-}
+//    public static double returnProductOfThreeNums(double num1, double num2, double num3) {
+//        int x = 5;
+//        int y = 6;
+//        String z = "bob";
+//        return num1 * num2 * num3;
+//    }
+//        System.out.println(returnProductOfThreeNums);
+//}
 
 
 
     // ----------- OVERLOADING
 
-    //    public static void sayHello(int times) {
-    //        for (int i = 0; i < times; i += 1) {
-    //            sayHello();
-    //        }
-    //    }
+    public static void sayHello(){
+        System.out.println("Hello");
+    }
+        public static void sayHello(int times) {
+
+            for (int i = 0; i < times; i += 1) {
+                sayHello();
+            }
+        }
     //    public static void sayHello() {
     //        sayHello("Hello", "World");
     //    }
@@ -105,6 +109,11 @@ public class MethodLecture {
     //    }
 
     // ----------- RECURSION
+
+    public static void soutHello() {
+        System.out.println("hello");
+        soutHello();
+    }
 
     //    public static void countTo100Loop(int num) {
     //        for (int i = num; i <= 100; i += 1) {
@@ -124,11 +133,11 @@ public class MethodLecture {
     //        return powerOf10(n-1) * 10;
     //    }
     //
-    //    public static int fibonacci(int n) {
-    //        if (n <= 1) {
-    //            return n;
-    //        }
-    //        return fibonacci(n-1) + fibonacci(n-2);
-    //    }
+        public static int fibonacci(int n) {
+            if (n <= 1) {
+                return n;
+            }
+            return fibonacci(n-1) + fibonacci(n-2);
+        }
 
 }
