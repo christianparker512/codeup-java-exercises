@@ -1,51 +1,150 @@
+import java.util.Formatter;
 import java.util.Scanner;
 
 public class MethodsExercises {
     public static void main(String[] args) {
-        System.out.println(addition(3, 2));
-        System.out.println(subtraction(3, 2));
-        System.out.println(multiply(3, 2));
-        System.out.println(divide(3, 2));
-        System.out.println(modulus(3, 2));
-        System.out.println(product(3, 2));
-        System.out.println(multiply2(6, 5));
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please enter an integer: ");
+        int firstInt = sc.nextInt();
+        System.out.print("Enter another integer: ");
+        int secondInt = sc.nextInt();
+        int result = 0;
+
+//  Basic Mathematics Method calls
+        addTwoNumbers(firstInt, secondInt);
+        subtractTwoNumbers(firstInt, secondInt);
+        multiplyTwoNumbers(firstInt, secondInt);
+        divideTwoNumbers(firstInt, secondInt);
+        modulusTwoNumbers(firstInt, secondInt);
+        System.out.println("Multiplying your two integers results in a product of " + multiplyStarless(firstInt, secondInt, result));
+
+//  Verify integer between 1-10
+        System.out.print("Enter a number between 1 and 10: ");
+        int userInput = getInteger(1, 10);
+
+// Factorize integer between 1-10
+        factorizeIt();
+
+// Dice Roll
+        pairOfDice();
 
     }
 
-
-    public static int addition(int num1, int num2) {
-        return num1 + num2;
+    // Methods
+    //Basic Mathematics
+    public static void addTwoNumbers(int a, int b) {
+        int sum = a + b;
+        System.out.printf("The sum of %d and %d = %d\n", a, b, sum);
     }
 
-    public static int subtraction(int num1, int num2) {
-        return num1 - num2;
+    public static void subtractTwoNumbers(int a, int b) {
+        int difference = a - b;
+        System.out.printf("%d take away %d = %d\n", a, b, difference);
     }
 
-    public static int multiply(int num1, int num2) {
-        return num1 * num2;
+    public static void multiplyTwoNumbers(int a, int b) {
+        int product = a * b;
+        System.out.printf("The product of %d times %d = %d\n", a, b, product);
     }
 
-    public static int divide(int num1, int num2) {
-        return num1 / num2;
+    public static void divideTwoNumbers(int a, int b) {
+        int quotient = a / b;
+        System.out.printf("The quotient of %d divided by %d = %d\n", a, b, quotient);
     }
 
-    public static int modulus(int num1, int num2) {
-        return num1 % num2;
+    public static void modulusTwoNumbers(int a, int b) {
+        int remainder = a % b;
+        System.out.printf("The remainder of %d divided by %d is %d.\n", a, b, remainder);
     }
 
-    public static int product(int num1, int num2) {
-        if(num1 == 0 || num2 == 0){
-            return 0;
+    ;
+
+    public static int multiplyStarless(int a, int b, int sum) {
+
+        if (b > 0) {
+            sum += a;
+            return multiplyStarless(a, b - 1, sum);
+        } else {
+            return sum;
         }
-        return num1 + product(num1, num2 -1);
     }
 
-    public static int multiply2(int num2, int num1) {
-        int product = 0;
-        for (int i = 1; i <= num1; i++) {
-            product += num2;
+    // Check Integer
+    public static int getInteger(int min, int max) {
+        Scanner scanner = new Scanner(System.in);
+        int checkInt = scanner.nextInt();
+
+        if (checkInt < min || checkInt > max) {
+            System.out.println("You have not entered an acceptable value.");
+            System.out.print("Please enter a whole number between " + min + " and " + max + ": ");
+            return getInteger(min, max);
+        } else {
+            return checkInt;
         }
-        return product;
+    }
+
+    // Print Factorial
+    public static void factorizeIt() {
+        System.out.print("Enter a number between 1 and 10: ");
+        int userInput = getInteger(1, 10);
+        long factorial = 1;
+        int center = userInput + ((userInput - 1) * 3);
+        StringBuilder centerStr = new StringBuilder(center);
+        centerStr.append("1");
+        Formatter f = new Formatter();
+        for (int i = 1; i <= userInput; i++) {
+            factorial *= i;
+            if (i > 1) {
+                centerStr.append(" x " + i);
+            }
+            System.out.printf("%d! = %-" + center + "s = %d\n", i, centerStr, factorial);
+        }
+        String anotherFactorial = "n";
+        System.out.print("Would you like to enter another number? (y or n) ");
+        Scanner another = new Scanner(System.in);
+        anotherFactorial = another.nextLine();
+        if (anotherFactorial.equalsIgnoreCase("y")) {
+            factorizeIt();
+        }
+    }
+
+    // Dice Roll
+    /*
+    Ask the user to enter the number of sides for a pair of dice.
+    Prompt the user to roll the dice.
+    "Roll" two n-sided dice,
+        Use static methods to implement the method(s) that generate the random numbers.
+            Use the .random method of the java.lang.Math class to generate random numbers.
+        display the results of each, and
+        then ask the user if he/she wants to roll the dice again.
+    */
+    public static void pairOfDice() {
+        System.out.print("For this pair of dice, how many sides does each die have? ");
+        Scanner gygax = new Scanner(System.in);
+        int dieSides = gygax.nextInt();
+        pressAnyKeyToContinue();
+        int[] diceRoll = rollTheDice(dieSides);
+        System.out.printf("You have rolled %d and %d!", diceRoll[0], diceRoll[1]);
+        System.out.println("Roll another pair of dice? (y/n) ");
+        String rollAgain = gygax.nextLine();
+        if (rollAgain.equalsIgnoreCase("y")) {
+            pairOfDice();
+        }
+    }
+
+    public static int[] rollTheDice(int sides) {
+        int[] dice = new int[2];
+        dice[0] = (int) (Math.random() * sides) + 1;
+        dice[1] = (int) (Math.random() * sides) + 1;
+        return dice;
+    }
+
+    private static void pressAnyKeyToContinue() {
+        System.out.println("Press Enter key to continue...");
+        try {
+            System.in.read();
+        } catch (Exception e) {
+        }
     }
 
 }
