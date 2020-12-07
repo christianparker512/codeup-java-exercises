@@ -9,7 +9,7 @@ public class StringEquality {
         System.out.println("The VIP pass? yes/no?");
         String vipPassReply = scanner.next();
 
-        if (age > 18 && vipPassReply.equals("yes")) {
+        if (age >=70 || (age > 18 && vipPassReply.equals("yes"))) {
             System.out.println("Thanks. You can come in");
         } else {
             System.out.println("Sorry. End of the line, buddy");
