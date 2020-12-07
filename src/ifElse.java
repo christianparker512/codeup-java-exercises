@@ -7,15 +7,15 @@ public class ifElse {
         System.out.println("Please enter your height in centimeters");
         int height = scanner.nextInt();
 
-        if (height < 130 || height > 210) {
-            System.out.println("Sorry, you don't meet the height requirements");
+        if (height > 130 && height < 210) {
+            System.out.println("You're good to go");
         }
 //        else if (height >210){
 //                System.out.println("You're too tall");
 //        if (height >= 130){
 //            System.out.println("You're tall enough");
         else {
-            System.out.println("You're good to go");
+            System.out.println("Sorry, you can't ride.");
         }
     }
 }
