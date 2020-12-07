@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
 public class ifElse {
-    public static void main (String [] args){
+    public static void main (String [] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to SuperFast RollerCoaster");
         System.out.println("Please enter your height in centimeters");
         int height = scanner.nextInt();
 
-        if (height < 130) {
-            System.out.println("Sorry, you're too short");
+        if (height < 130 || height > 210) {
+            System.out.println("Sorry, you don't meet the height requirements");
         }
-        else if (height >210){
-                System.out.println("You're too tall");
+//        else if (height >210){
+//                System.out.println("You're too tall");
 //        if (height >= 130){
 //            System.out.println("You're tall enough");
-        } else {
+        else {
             System.out.println("You're good to go");
         }
     }
