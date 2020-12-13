@@ -15,7 +15,6 @@ public class WhileAndDoWhile {
         System.out.println("Count value was " + count);
         count ++;
     } while (count !=6);
-
         count = 1;
         while (true) {
             if (count == 6) {
