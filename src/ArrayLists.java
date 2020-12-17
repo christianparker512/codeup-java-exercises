@@ -66,9 +66,10 @@ public class ArrayLists {
         System.out.println(roasts);
 
 //        How to put the array in alphabetical order
-//        Collections.reverseOrder(roasts);
+//
         Collections.sort(roasts);
-
+//        This is away to reverse the sort
+        roasts.sort(Collections.reverseOrder());
         System.out.println(roasts);
     }
 }
