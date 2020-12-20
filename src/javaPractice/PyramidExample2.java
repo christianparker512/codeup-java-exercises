@@ -5,7 +5,7 @@ public class PyramidExample2 {
         int term =6;
         for (int k = 1; k <= term; k++){
             for (int m = term; m >= k; m--){
-                System.out.println("* ");
+                System.out.print("* ");
             }
             System.out.println();
         }
