@@ -8,12 +8,11 @@ import java.util.Scanner;
             this.scanner = new Scanner(System.in);
         }
 
-        public String getString(){
-            return this.scanner.nextLine();
+        public String getString(){return this.scanner.nextLine();
         }
 
         public String getString(String prompt){
-            System.out.println(prompt);
+            System.out.println("Would you like to play a game? Hit enter.");
             return this.scanner.nextLine();
         }
         public boolean yesNo(){
@@ -38,7 +37,7 @@ import java.util.Scanner;
                     num = Integer.parseInt(input);
 
                 } catch(Exception e) {
-                    System.out.println("You must enter an inter.");
+                    System.out.println("Hey, can you not read? How about a number this time?");
                     return getInt(min, max);
                 }
                 if (num >= min && num <= max) {

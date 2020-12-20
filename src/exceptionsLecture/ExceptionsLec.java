@@ -67,7 +67,7 @@ public class ExceptionsLec {
 
 
 
-        try {
+//        try {
 //            throw new Exception("Something went wrong"); // Generally wrong - last catch
 
 //            throw new NullPointerException("Something went wrong message"); // Something went wrong message
@@ -75,13 +75,14 @@ public class ExceptionsLec {
 //            throw new ArrayIndexOutOfBoundsException(); //Runtime exception happened
 
 
-        } catch(NullPointerException e) {
-            System.out.println(e.getMessage()); //This gets the message passed when the exception is thrown
-        } catch(RuntimeException e) {
-            System.out.println("Runtime exception happened");
-        } catch(Exception e) {
-            System.out.println("Something went wrong generally");
-        }
+//        } catch(NullPointerException e) {
+//            System.out.println(e.getMessage()); //This gets the message passed when the exception is thrown
+//            e.printStackTrace();
+//        } catch(RuntimeException e) {
+//            System.out.println("Runtime exception happened");
+//        } catch(Exception e) {
+//            System.out.println("Something went wrong generally");
+//        }
 
 
 
