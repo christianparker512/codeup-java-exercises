@@ -14,9 +14,11 @@ public class UserInput {
         System.out.print(word2);
         System.out.print(word3);
 
-        int number1 = scanner.nextInt();
-        int number2 = scanner.nextInt();
-        int number3 = scanner.nextInt();
+
+//        when dealing with numbers you have to use the nextInt, but if you're dealing with decimals you need to use nextFloat'
+        float  number1 = scanner.nextFloat();
+        float number2 = scanner.nextFloat();
+        float number3 = scanner.nextFloat();
         System.out.println(number1 + number2 + number3);
     }
 }
