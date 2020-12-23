@@ -16,9 +16,16 @@ public class UserInput {
 
 
 //        when dealing with numbers you have to use the nextInt, but if you're dealing with decimals you need to use nextFloat'
+        System.out.println("Enter Three numbers: ");
         float  number1 = scanner.nextFloat();
         float number2 = scanner.nextFloat();
         float number3 = scanner.nextFloat();
-        System.out.println(number1 + number2 + number3);
+        System.out.println("The sum would be: " + number1 + number2 + number3);
+
+        System.out.println("True or false: You are a boy? ");
+        boolean boy = scanner.nextBoolean();
+
+
+        System.out.println(boy);
     }
 }
