@@ -7,8 +7,10 @@ public class Dog extends Animal {
     private int teeth;
     private String coat;
 
+//    have to add the above variables as parameters into this constructor
     public Dog(String name, int size, int weight, int eyes, int legs, int tail, int teeth, String coat) {
         super(name, 1, 1, size, weight);
+//        Need to initialize these variables below
         this.eyes = eyes;
         this.legs = legs;
         this.tail = tail;
@@ -20,10 +22,30 @@ public class Dog extends Animal {
         System.out.println("Dog.chew() called");
     }
 
+
+//    These methods are behaviors specific to dogs
     @Override
     public void eat() {
         System.out.println("Dog.eat() called");
         chew();
         super.eat();
+    }
+    public void walk(){
+        System.out.println("Dog.walk() called");
+        move(5);
+    }
+    public void run(){
+        System.out.println("Dog.run() called");
+        move(10);
+    }
+    private void moveLegs(int speed){
+        System.out.println("Dog.moveLegs() called");
+    }
+
+    @Override
+    public void move(int speed){
+        System.out.println("Dog.move()called");
+        moveLegs(speed);
+        super.move(speed);
     }
 }
